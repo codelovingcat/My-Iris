@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090806">
+  <meta name="description" content="My Iris — a visual experiment built around expressive khaki-green eyes.">
+  <title>My Iris</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="eye-stage">
+    <div class="ambient-light" aria-hidden="true"></div>
+
+    <section class="portrait" aria-label="A pair of khaki-green eyes">
+      <div class="brow brow-left" aria-hidden="true"></div>
+
+      <div class="eye eye-left">
+        <svg class="eye-svg" viewBox="0 0 520 250" role="img" aria-labelledby="left-eye-title left-eye-desc">
+          <title id="left-eye-title">Left khaki-green eye</title>
+          <desc id="left-eye-desc">A softly shaded eye with a warm khaki-green iris and dark pupil.</desc>
+
+          <defs>
+            <linearGradient id="left-sclera" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stop-color="#fffdf7"/>
+              <stop offset="55%" stop-color="#f5eee5"/>
+              <stop offset="100%" stop-color="#d8cfc3"/>
+            </linearGradient>
+
+            <radialGradient id="left-iris" cx="48%" cy="40%" r="62%">
+              <stop offset="0%" stop-color="#a8ad67"/>
+              <stop offset="18%" stop-color="#858b48"/>
+              <stop offset="46%" stop-color="#69713a"/>
+              <stop offset="74%" stop-color="#4e5730"/>
+              <stop offset="100%" stop-color="#2b311d"/>
+            </radialGradient>
+
+            <radialGradient id="left-iris-light" cx="34%" cy="26%" r="70%">
+              <stop offset="0%" stop-color="#f7f7db" stop-opacity=".8"/>
+              <stop offset="28%" stop-color="#d9dca0" stop-opacity=".18"/>
+              <stop offset="100%" stop-color="#d9dca0" stop-opacity="0"/>
+            </radialGradient>
+
+            <radialGradient id="left-pupil" cx="50%" cy="44%" r="64%">
+              <stop offset="0%" stop-color="#090b05"/>
+              <stop offset="78%" stop-color="#15180b"/>
+              <stop offset="100%" stop-color="#282d17"/>
+            </radialGradient>
+
+            <linearGradient id="left-lid" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stop-color="#6e4b38" stop-opacity=".28"/>
+              <stop offset="55%" stop-color="#513628" stop-opacity=".08"/>
+              <stop offset="100%" stop-color="#2b1e18" stop-opacity="0"/>
+            </linearGradient>
+
+            <filter id="left-eye-shadow" x="-20%" y="-35%" width="140%" height="180%">
+              <feDropShadow dx="0" dy="13" stdDeviation="11" flood-color="#000000" flood-opacity=".38"/>
+            </filter>
+
+            <filter id="left-iris-glow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="8"/>
+            </filter>
+
+            <clipPath id="left-eye-clip">
+              <path d="M42 126C98 40 177 18 260 18S422 40 478 126C422 210 343 232 260 232S98 210 42 126Z"/>
+            </clipPath>
+          </defs>
+
+          <path
+            d="M42 126C98 40 177 18 260 18S422 40 478 126C422 210 343 232 260 232S98 210 42 126Z"
+            fill="url(#left-sclera)"
+            filter="url(#left-eye-shadow)"
+          />
+
+          <path
+            d="M45 126C100 47 178 28 260 28S420 47 475 126C420 73 345 60 260 60S100 73 45 126Z"
+            fill="url(#left-lid)"
+            opacity=".72"
+          />
+
+          <g clip-path="url(#left-eye-clip)">
+            <ellipse class="iris-glow" cx="260" cy="128" rx="77" ry="77" fill="#9ba35a" opacity=".12" filter="url(#left-iris-glow)"/>
+
+            <circle cx="260" cy="128" r="72" fill="url(#left-iris)"/>
+            <circle cx="260" cy="128" r="70" fill="none" stroke="#28311c" stroke-width="7" opacity=".72"/>
+            <circle cx="260" cy="128" r="49" fill="none" stroke="#a9ad6d" stroke-width="8" opacity=".24"/>
+
+            <path d="M260 57L266 109M260 199L254 148M189 128L238 130M331 128L282 126M209 76L244 109M311 76L275 108M210 181L245 148M310 181L276 148"
+              fill="none"
+              stroke="#d7d88f"
+              stroke-width="3"
+              stroke-linecap="round"
+              opacity=".31"/>
+
+            <path d="M236 68C251 57 271 57 287 70C274 84 246 84 236 68Z"
+              fill="#d7d88f"
+              opacity=".18"/>
+
+            <circle cx="260" cy="128" r="28" fill="url(#left-pupil)"/>
+            <circle cx="260" cy="128" r="23" fill="#0b0d06" opacity=".88"/>
+
+            <circle cx="237" cy="99" r="14" fill="url(#left-iris-light)" opacity=".92"/>
+            <ellipse cx="224" cy="88" rx="26" ry="13" fill="#ffffff" opacity=".2" transform="rotate(-24 224 88)"/>
+            <circle cx="285" cy="156" r="5" fill="#f3f0c9" opacity=".34"/>
+          </g>
+
+          <path
+            d="M42 126C98 40 177 18 260 18S422 40 478 126"
+            fill="none"
+            stroke="#37241c"
+            stroke-width="13"
+            stroke-linecap="round"
+            opacity=".52"
+          />
+
+          <path
+            d="M42 126C98 210 177 232 260 232S422 210 478 126"
+            fill="none"
+            stroke="#5d3b2c"
+            stroke-width="8"
+            stroke-linecap="round"
+            opacity=".34"
+          />
+
+          <g opacity=".34" fill="#2b1d17">
+            <ellipse cx="86" cy="106" rx="7" ry="3" transform="rotate(-32 86 106)"/>
+            <ellipse cx="104" cy="84" rx="6" ry="3" transform="rotate(-27 104 84)"/>
+            <ellipse cx="434" cy="84" rx="6" ry="3" transform="rotate(27 434 84)"/>
+            <ellipse cx="452" cy="106" rx="7" ry="3" transform="rotate(32 452 106)"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="brow brow-right" aria-hidden="true"></div>
+
+      <div class="eye eye-right">
+        <svg class="eye-svg" viewBox="0 0 520 250" role="img" aria-labelledby="right-eye-title right-eye-desc">
+          <title id="right-eye-title">Right khaki-green eye</title>
+          <desc id="right-eye-desc">A softly shaded eye with a warm khaki-green iris and dark pupil.</desc>
+
+          <defs>
+            <linearGradient id="right-sclera" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stop-color="#fffdf7"/>
+              <stop offset="55%" stop-color="#f5eee5"/>
+              <stop offset="100%" stop-color="#d8cfc3"/>
+            </linearGradient>
+
+            <radialGradient id="right-iris" cx="48%" cy="40%" r="62%">
+              <stop offset="0%" stop-color="#a8ad67"/>
+              <stop offset="18%" stop-color="#858b48"/>
+              <stop offset="46%" stop-color="#69713a"/>
+              <stop offset="74%" stop-color="#4e5730"/>
+              <stop offset="100%" stop-color="#2b311d"/>
+            </radialGradient>
+
+            <radialGradient id="right-iris-light" cx="34%" cy="26%" r="70%">
+              <stop offset="0%" stop-color="#f7f7db" stop-opacity=".8"/>
+              <stop offset="28%" stop-color="#d9dca0" stop-opacity=".18"/>
+              <stop offset="100%" stop-color="#d9dca0" stop-opacity="0"/>
+            </radialGradient>
+
+            <radialGradient id="right-pupil" cx="50%" cy="44%" r="64%">
+              <stop offset="0%" stop-color="#090b05"/>
+              <stop offset="78%" stop-color="#15180b"/>
+              <stop offset="100%" stop-color="#282d17"/>
+            </radialGradient>
+
+            <linearGradient id="right-lid" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stop-color="#6e4b38" stop-opacity=".28"/>
+              <stop offset="55%" stop-color="#513628" stop-opacity=".08"/>
+              <stop offset="100%" stop-color="#2b1e18" stop-opacity="0"/>
+            </linearGradient>
+
+            <filter id="right-eye-shadow" x="-20%" y="-35%" width="140%" height="180%">
+              <feDropShadow dx="0" dy="13" stdDeviation="11" flood-color="#000000" flood-opacity=".38"/>
+            </filter>
+
+            <filter id="right-iris-glow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="8"/>
+            </filter>
+
+            <clipPath id="right-eye-clip">
+              <path d="M42 126C98 40 177 18 260 18S422 40 478 126C422 210 343 232 260 232S98 210 42 126Z"/>
+            </clipPath>
+          </defs>
+
+          <path
+            d="M42 126C98 40 177 18 260 18S422 40 478 126C422 210 343 232 260 232S98 210 42 126Z"
+            fill="url(#right-sclera)"
+            filter="url(#right-eye-shadow)"
+          />
+
+          <path
+            d="M45 126C100 47 178 28 260 28S420 47 475 126C420 73 345 60 260 60S100 73 45 126Z"
+            fill="url(#right-lid)"
+            opacity=".72"
+          />
+
+          <g clip-path="url(#right-eye-clip)">
+            <ellipse class="iris-glow" cx="260" cy="128" rx="77" ry="77" fill="#9ba35a" opacity=".12" filter="url(#right-iris-glow)"/>
+
+            <circle cx="260" cy="128" r="72" fill="url(#right-iris)"/>
+            <circle cx="260" cy="128" r="70" fill="none" stroke="#28311c" stroke-width="7" opacity=".72"/>
+            <circle cx="260" cy="128" r="49" fill="none" stroke="#a9ad6d" stroke-width="8" opacity=".24"/>
+
+            <path d="M260 57L266 109M260 199L254 148M189 128L238 130M331 128L282 126M209 76L244 109M311 76L275 108M210 181L245 148M310 181L276 148"
+              fill="none"
+              stroke="#d7d88f"
+              stroke-width="3"
+              stroke-linecap="round"
+              opacity=".31"/>
+
+            <path d="M236 68C251 57 271 57 287 70C274 84 246 84 236 68Z"
+              fill="#d7d88f"
+              opacity=".18"/>
+
+            <circle cx="260" cy="128" r="28" fill="url(#right-pupil)"/>
+            <circle cx="260" cy="128" r="23" fill="#0b0d06" opacity=".88"/>
+
+            <circle cx="237" cy="99" r="14" fill="url(#right-iris-light)" opacity=".92"/>
+            <ellipse cx="224" cy="88" rx="26" ry="13" fill="#ffffff" opacity=".2" transform="rotate(-24 224 88)"/>
+            <circle cx="285" cy="156" r="5" fill="#f3f0c9" opacity=".34"/>
+          </g>
+
+          <path
+            d="M42 126C98 40 177 18 260 18S422 40 478 126"
+            fill="none"
+            stroke="#37241c"
+            stroke-width="13"
+            stroke-linecap="round"
+            opacity=".52"
+          />
+
+          <path
+            d="M42 126C98 210 177 232 260 232S422 210 478 126"
+            fill="none"
+            stroke="#5d3b2c"
+            stroke-width="8"
+            stroke-linecap="round"
+            opacity=".34"
+          />
+
+          <g opacity=".34" fill="#2b1d17">
+            <ellipse cx="86" cy="106" rx="7" ry="3" transform="rotate(-32 86 106)"/>
+            <ellipse cx="104" cy="84" rx="6" ry="3" transform="rotate(-27 104 84)"/>
+            <ellipse cx="434" cy="84" rx="6" ry="3" transform="rotate(27 434 84)"/>
+            <ellipse cx="452" cy="106" rx="7" ry="3" transform="rotate(32 452 106)"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
