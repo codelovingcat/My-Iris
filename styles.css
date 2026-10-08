@@ -167,3 +167,15 @@ body::after {
     width: 31%;
   }
 }
+
+.iris-system {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iris-system {
+    transform: translate(0, 0) !important;
+  }
+}
