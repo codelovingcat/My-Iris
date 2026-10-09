@@ -106,3 +106,54 @@ prefersReducedMotion.addEventListener("change", () => {
 window.addEventListener("pagehide", () => {
   if (pointerFrame !== null) cancelAnimationFrame(pointerFrame);
 });
+
+
+const blinkLids = Array.from(document.querySelectorAll(".blink-lid"));
+const BLINK_MIN_DELAY = 2600;
+const BLINK_MAX_DELAY = 5200;
+const BLINK_DURATION = 220;
+let blinkTimer = null;
+let blinkEndTimer = null;
+
+function scheduleBlink() {
+  if (prefersReducedMotion.matches || document.hidden) return;
+
+  const delay = BLINK_MIN_DELAY + Math.random() * (BLINK_MAX_DELAY - BLINK_MIN_DELAY);
+  blinkTimer = window.setTimeout(() => {
+    if (prefersReducedMotion.matches || document.hidden) {
+      scheduleBlink();
+      return;
+    }
+
+    eyeStage.classList.add("is-blinking");
+    blinkEndTimer = window.setTimeout(() => {
+      eyeStage.classList.remove("is-blinking");
+      blinkEndTimer = null;
+      scheduleBlink();
+    }, BLINK_DURATION);
+  }, delay);
+}
+
+function stopBlinking() {
+  if (blinkTimer !== null) {
+    window.clearTimeout(blinkTimer);
+    blinkTimer = null;
+  }
+
+  if (blinkEndTimer !== null) {
+    window.clearTimeout(blinkEndTimer);
+    blinkEndTimer = null;
+  }
+
+  eyeStage.classList.remove("is-blinking");
+}
+
+function refreshBlinking() {
+  stopBlinking();
+  if (!prefersReducedMotion.matches && !document.hidden) scheduleBlink();
+}
+
+prefersReducedMotion.addEventListener("change", refreshBlinking);
+document.addEventListener("visibilitychange", refreshBlinking);
+window.addEventListener("pagehide", stopBlinking);
+refreshBlinking();
