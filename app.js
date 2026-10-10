@@ -157,10 +157,24 @@ function stopBlinking() {
   eyeStage.classList.remove("is-blinking");
 }
 
+function triggerBlink() {
+  if (prefersReducedMotion.matches || document.hidden) return;
+
+  stopBlinking();
+  eyeStage.classList.add("is-blinking");
+  blinkEndTimer = window.setTimeout(() => {
+    eyeStage.classList.remove("is-blinking");
+    blinkEndTimer = null;
+    scheduleBlink();
+  }, BLINK_DURATION);
+}
+
 function refreshBlinking() {
   stopBlinking();
   if (!prefersReducedMotion.matches && !document.hidden) scheduleBlink();
 }
+
+eyeStage.addEventListener("click", triggerBlink);
 
 prefersReducedMotion.addEventListener("change", refreshBlinking);
 document.addEventListener("visibilitychange", refreshBlinking);
