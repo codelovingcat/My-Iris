@@ -81,9 +81,19 @@ function startAnimation() {
 }
 
 function handlePointerMove(event) {
-  if (event.pointerType === "touch") return;
   pointerInside = true;
   updateTargets(event.clientX, event.clientY);
+}
+
+function handleTouchStart(event) {
+  if (event.pointerType !== "touch") return;
+  pointerInside = true;
+  updateTargets(event.clientX, event.clientY);
+}
+
+function handleTouchEnd(event) {
+  if (event.pointerType !== "touch") return;
+  resetPointer();
 }
 
 function resetPointer() {
@@ -92,6 +102,9 @@ function resetPointer() {
 }
 
 eyeStage.addEventListener("pointermove", handlePointerMove);
+eyeStage.addEventListener("pointerdown", handleTouchStart);
+eyeStage.addEventListener("pointerup", handleTouchEnd);
+eyeStage.addEventListener("pointercancel", handleTouchEnd);
 eyeStage.addEventListener("pointerleave", resetPointer);
 window.addEventListener("blur", resetPointer);
 
