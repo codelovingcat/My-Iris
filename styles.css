@@ -1,8 +1,6 @@
 :root {
   color-scheme: dark;
   --bg: #090806;
-  --brow: #4a3427;
-  --brow-highlight: #6a4a35;
 }
 
 * {
@@ -93,44 +91,6 @@ body::after {
   overflow: visible;
 }
 
-.brow {
-  position: absolute;
-  width: 34%;
-  height: clamp(20px, 2.8vw, 36px);
-  top: -6.5%;
-  border-radius: 58% 62% 24% 24% / 92% 100% 28% 28%;
-  background:
-    linear-gradient(180deg, #76523a 0%, var(--brow-highlight) 24%, var(--brow) 68%, #241912 100%);
-  clip-path: polygon(0 78%, 5% 61%, 16% 39%, 29% 20%, 43% 8%, 56% 4%, 69% 12%, 82% 32%, 94% 59%, 100% 76%, 97% 88%, 88% 75%, 76% 57%, 64% 43%, 52% 38%, 40% 42%, 28% 52%, 16% 67%, 6% 84%);
-  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, .28));
-  transform: rotate(-4deg);
-  z-index: 2;
-}
-
-.brow-left {
-  left: 15%;
-}
-
-.brow-right {
-  right: 15%;
-  transform: rotate(7deg);
-}
-
-.brow::after {
-  content: "";
-  position: absolute;
-  inset: 14% 7% 20%;
-  border-radius: inherit;
-  background: repeating-linear-gradient(
-    105deg,
-    rgba(213, 174, 133, .19) 0 1px,
-    rgba(25, 17, 12, .16) 1px 2px,
-    transparent 2px 5px
-  );
-  clip-path: inherit;
-  opacity: .72;
-}
-
 .iris-glow {
   mix-blend-mode: screen;
 }
@@ -146,19 +106,6 @@ body::after {
     gap: 2rem;
   }
 
-  .brow {
-    width: 29%;
-    height: clamp(18px, 4.5vw, 28px);
-    top: -5%;
-  }
-
-  .brow-left {
-    left: 18%;
-  }
-
-  .brow-right {
-    right: 18%;
-  }
 }
 
 @media (max-width: 460px) {
@@ -166,9 +113,6 @@ body::after {
     gap: 1.2rem;
   }
 
-  .brow {
-    width: 31%;
-  }
 }
 
 .iris-system {
