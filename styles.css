@@ -233,3 +233,13 @@ body::after {
     animation: none;
   }
 }
+
+
+/* Anchor each blink overlay to its individual eye on both desktop and mobile. */
+.eye > .blink-lid {
+  top: 0;
+  left: 0;
+  right: auto;
+  width: 100%;
+  aspect-ratio: 520 / 250;
+}
