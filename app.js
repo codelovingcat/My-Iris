@@ -108,6 +108,15 @@ window.addEventListener("pagehide", () => {
 });
 
 
+// Keep each blink overlay anchored to its own eye, including the stacked mobile layout.
+const leftEye = document.querySelector(".eye-left");
+const rightEye = document.querySelector(".eye-right");
+const leftBlinkLid = document.querySelector(".blink-lid-left");
+const rightBlinkLid = document.querySelector(".blink-lid-right");
+
+if (leftEye && leftBlinkLid) leftEye.prepend(leftBlinkLid);
+if (rightEye && rightBlinkLid) rightEye.prepend(rightBlinkLid);
+
 const blinkLids = Array.from(document.querySelectorAll(".blink-lid"));
 const BLINK_MIN_DELAY = 2600;
 const BLINK_MAX_DELAY = 5200;
