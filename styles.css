@@ -246,3 +246,11 @@ body::after {
   width: 100%;
   aspect-ratio: 520 / 250;
 }
+
+
+/* The eyebrow shapes are intentionally hidden until a better design is ready. */
+.brow,
+.brow::before,
+.brow::after {
+  display: none !important;
+}
